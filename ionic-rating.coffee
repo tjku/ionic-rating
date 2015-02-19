@@ -30,8 +30,8 @@ angular.module 'ionic.rating', []
         $scope.range = this.buildTemplateObjects(ratingStates)
 
     this.buildTemplateObjects = (states) ->
-        for i in states.length
-            states[i] = angular.extend { index: 1 }, { stateOn: this.stateOn, stateOff: this.stateOff }, states[i]
+        for state, i in states
+            states[i] = angular.extend { index: i }, { stateOn: this.stateOn, stateOff: this.stateOff }, state
         return states
 
     $scope.rate = (value) ->
